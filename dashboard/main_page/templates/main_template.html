@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dash</title>
+</head>
+<body>
+
+
+<div class="form-group">
+    <h1>Here are some comics, yay!</h1>
+    {% for comic in comic_context %}
+        <div>
+        <h2>{{ comic.comic_title }}</h2>
+        <a href="/main_page?comic={{ comic.id }}">
+            <img src={{comic}} />
+        </a>
+        {% if comic.alt_text %}
+            <h4>Alt text: {{ comic.alt_text }}</h4>
+        {% endif %}
+        <br>
+        </div>
+    {% endfor %}
+
+</div>
+
+
+</body>
+</html>
